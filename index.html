@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma declaração para você ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #16000b, #4a001d, #8b0038);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.coracao {
+    font-size: 65px;
+    animation: bater 1s infinite;
+    margin: 20px;
+}
+
+@keyframes bater {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+h1 {
+    font-size: 38px;
+    color: #ffb6ce;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.9;
+    margin: 20px 0;
+}
+
+.card {
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 0 25px rgba(255,0,80,0.25);
+}
+
+.destaque {
+    color: #ff9fbd;
+    font-weight: bold;
+}
+
+button {
+    background: #ff386f;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff7198;
+    transform: scale(1.07);
+}
+
+#surpresa {
+    display: none;
+    margin-top: 35px;
+    animation: aparecer 2s;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.flor {
+    font-size: 30px;
+    margin: 10px;
+}
+
+footer {
+    margin-top: 50px;
+    color: #ffb6ce;
+    font-size: 15px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff5b8d;
+    animation: subir 6s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="coracao">❤️</div>
+
+    <h1>Uma mensagem para você...</h1>
+
+    <p>
+        Existem pessoas que chegam em nossas vidas
+        sem avisar e, quando percebemos, já se tornaram
+        uma das partes mais especiais dos nossos dias.
+    </p>
+
+    <div class="card">
+
+        <h2>6 meses de nós... 💕</h2>
+
+        <p>
+            Há 6 meses você entrou na minha vida e,
+            desde então, muita coisa mudou.
+        </p>
+
+        <p>
+            Seu jeito, seu sorriso, suas palavras e até
+            os pequenos momentos ao seu lado começaram
+            a ter um significado enorme para mim.
+        </p>
+
+        <p>
+            Talvez eu não consiga demonstrar todos os dias
+            o quanto você é especial, mas quero que saiba
+            que sou muito feliz por ter você na minha vida.
+        </p>
+
+        <p>
+            Não sei o que o futuro nos reserva, mas sei
+            que quero continuar construindo momentos,
+            histórias e lembranças ao seu lado.
+        </p>
+
+        
+
+    </div>
+
+    <div class="card">
+
+        <h2>Tem algo que quero te dizer... 🥺</h2>
+
+        <p>
+            Durante esse tempo, meu coração foi guardando
+            um sentimento que hoje eu não quero mais esconder.
+        </p>
+
+        <p>
+            Então, quero que você clique no botão abaixo.
+            Preparei uma surpresa especialmente para você.
+        </p>
+
+        <button onclick="mostrarSurpresa()">
+            Clique aqui, meu amor ❤️
+        </button>
+
+        <div id="surpresa">
+
+            <div class="coracao">❤️</div>
+
+            <h1>EU TE AMO! ❤️</h1>
+
+            <p>
+                Sim, é a primeira vez que estou dizendo isso,
+                mas quero que saiba que essas palavras
+                vêm do fundo do meu coração.
+            </p>
+
+            <p>
+                Você se tornou alguém muito especial para mim.
+                Eu amo ter você na minha vida, amo os momentos
+                que compartilhamos e quero viver muitos outros
+                ao seu lado.
+            </p>
+
+            <p class="destaque">
+                Obrigado por esses 6 meses.
+                Que sejam apenas o começo da nossa história.
+            </p>
+
+            <div class="flor">🌹❤️🌹</div>
+
+            <h2>Com todo o meu amor! ❤️</h2>
+            <img src="imagem.amor.jpg" height="300px">
+            
+
+        </div>
+
+    </div>
+
+    <footer>
+        Feito com carinho, especialmente para você. ❤️
+        
+    </footer>
+    
+
+</div>
+
+
+<script>
+function mostrarSurpresa() {
+    document.getElementById("surpresa").style.display = "block";
+
+    document.querySelector("button").style.display = "none";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+// Corações flutuando pela tela
+function criarCoracao() {
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("heart");
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (15 + Math.random() * 25) + "px";
+    coracao.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 9000);
+}
+
+setInterval(criarCoracao, 500);
+</script>
+
+</body>
+</html>
